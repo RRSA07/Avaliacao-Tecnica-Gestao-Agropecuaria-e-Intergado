@@ -11,14 +11,14 @@ Para utilizar a interface da Astronomer devemos executar alguns passos que mudam
  
 Após a instalação é preciso realizar a configuração e inicialização:
 
- 1.  Criar o diretório que nesse projeto é:  
+ 3.  Criar o diretório que nesse projeto é:  
 	 >**Airflow Astro CLI**
  
- 2.  Dentro do diretório usar o comando:  
+ 4.  Dentro do diretório usar o comando:  
 	 >**astro dev init**
 	 
- 3. Oragnizei a estrutura do projeto.
- 4. Iniciei a versão local do meu Airflow com o comando: 
+ 5. Oragnizei a estrutura do projeto.
+ 6. Iniciei a versão local do meu Airflow com o comando: 
 	 >**astro dev start**
 	 
  - Esse comando vai subir 3 Docker containers, cada um para um componente do Airflow:
@@ -27,14 +27,15 @@ Após a instalação é preciso realizar a configuração e inicialização:
 	- Scheduler: Componente responsável pelo monitoramento e execução das tasks
  - O Airflow UI pode ser acessado pelo endereço **http://localhost:8080/** com o login e a senha **admin**.
  
- Para obter maiores informações sobre a Astronomer e o Astro CLI pode-se acessar o link **https://docs.astronomer.io/**
+ Para obter maiores informações sobre a Astronomer e o Astro CLI e como é feito a instalação em outros sistemas operacionais pode-se acessar o link **https://docs.astronomer.io/**
+ 
  Para reproduzir na sua máquina siga os passos:
  
  - Clone o projeto.   
- - Executar o passo 2. 
+ - Executar o passo 4. 
  - Enter yes para atualizar o projeto com as configurações iniciais
  - Excluir o arquivo parquet e modificar o csv para a versão antes do upsert
- - E no diretório do arquivo executar o passo 4
+ - E no diretório do arquivo executar o passo 6
 
  
 ## Metodologia da Avaliação
@@ -60,7 +61,7 @@ Para a avaliação a estrutura do projeto está da seguinte forma:
 └── tests
     └── dags
 ```
-Na Dag o processo dividido em três tasks. A primeira faz a leitura e a transformação da planilha **cepea-consulta-20230116155544.xls** e a segunda faz a busca na API dos dados do indexador IPCA. Como essas duas tasks não tem depência essas execultam em paralelo e a saída das duas entram como paramêtro na terceira função.
+A Dag da atividade foi dividida em três tasks. A primeira faz a leitura e a transformação da planilha **cepea-consulta-20230116155544.xls** e a segunda faz a busca na API dos dados do **Indexador IPCA**. Como essas duas tasks não tem depência essas são execultadas em paralelo e a saída das duas entram como paramêtro na terceira função.
 
 ```mermaid
   graph LR;

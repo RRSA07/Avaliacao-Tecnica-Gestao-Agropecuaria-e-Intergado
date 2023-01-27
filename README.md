@@ -61,13 +61,13 @@ Para a avaliação a estrutura do projeto está da seguinte forma:
     └── dags
 ```
 Na Dag o processo dividido em três tasks. A primeira faz a leitura e a transformação da planilha **cepea-consulta-20230116155544.xls** e a segunda faz a busca na API dos dados do indexador IPCA. Como essas duas tasks não tem depência essas execultam em paralelo e a saída das duas entram como paramêtro na terceira função.
-	```mermaid
-	graph LR
-	B(task1) 
-	C(task2)
-	B --> D(task3)
-	C --> D
-	```
+
+```mermaid
+  graph LR;
+      task1-->task3;
+      task2-->task3;
+```
+	
 A task3 fica responsável pelo relacinamento do resultado das tasks anteriores com o arquivo **boi_gordo_base.csv** atualizando o arquivo e gravando também em formato parquet.
 
 Para fazer a ETL usei a biblioteca Pandas e Numpy. Nessas bibliotecas consigo manipular os dados em diversos formatos como dataframe e json.

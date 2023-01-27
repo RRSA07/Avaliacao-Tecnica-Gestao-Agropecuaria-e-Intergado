@@ -40,15 +40,15 @@ Após a instalação é preciso realizar a configuração e inicialização:
 ## Metodologia da Avaliação
 
 Para a avaliação a estrutura do projeto está da seguinte forma:
-- .astro
-- dags
--- ETL
----- etl_function.py
--- include
----- boi_gordo_base.csv
----- cepea-consulta-20230116155544.xls
--- airflowignore
--- dag_etl.py
+> .astro
+> dags
+>> ETL
+>>>> etl_function.py
+>> include
+>>>> boi_gordo_base.csv
+>>>> cepea-consulta-20230116155544.xls
+>> airflowignore
+>> dag_etl.py
 ...
 Na Dag dividi o processo em três tasks. A primeira faz a leitura e a transformação da planilha **cepea-consulta-20230116155544.xls** e a segunda faz a busca na API dos dados do indexador IPCA. Como essas duas tasks não tem depência essas execultam em paralelo e a saída das duas entram como paramêtro na terceira função.
 	```mermaid

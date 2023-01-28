@@ -73,7 +73,7 @@ A task3 fica responsável pelo relacionamento do resultado das tasks anteriores 
 
 Para fazer a ETL usei a biblioteca Pandas e Numpy. Nessas bibliotecas consigo manipular os dados em diversos formatos como dataframe e json.
 
-Para realizar os cálculos de correção monetária do IPCA acumulado para a base de 12/2022 utilizei a mesma lógica utilizada no serviço web **Calculadora do cidadão** disponibilizado pelo pelo Banco Central nesse  [link](https://www3.bcb.gov.br/CALCIDADAO/publico/exibirFormCorrecaoValores.do?method=exibirFormCorrecaoValores).
+Para realizar os cálculos de correção monetária do IPCA acumulado para a base de 12/2022 utilizei a mesma lógica utilizada no serviço web **Calculadora do cidadão** disponibilizado pelo Banco Central nesse  [link](https://www3.bcb.gov.br/CALCIDADAO/publico/exibirFormCorrecaoValores.do?method=exibirFormCorrecaoValores).
 
 O cálculo é realizado da seguinte  forma:
 

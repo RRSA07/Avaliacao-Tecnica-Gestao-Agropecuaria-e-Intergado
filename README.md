@@ -17,7 +17,7 @@ Após a instalação é preciso realizar a configuração e inicialização:
  4.  Dentro do diretório usar o comando:  
 	 >**astro dev init**
 	 
- 5. Oragnizei a estrutura do projeto.
+ 5. Organizei a estrutura do projeto.
  6. Iniciei a versão local do meu Airflow com o comando: 
 	 >**astro dev start**
 	 
@@ -69,7 +69,7 @@ A Dag da atividade foi dividida em três tasks. A primeira faz a leitura e a tra
       task2-->task3;
 ```
 	
-A task3 fica responsável pelo relacinamento do resultado das tasks anteriores com o arquivo **boi_gordo_base.csv** atualizando o arquivo e gravando também em formato parquet.
+A task3 fica responsável pelo relacionamento do resultado das tasks anteriores com o arquivo **boi_gordo_base.csv** atualizando o arquivo e gravando também em formato parquet.
 
 Para fazer a ETL usei a biblioteca Pandas e Numpy. Nessas bibliotecas consigo manipular os dados em diversos formatos como dataframe e json.
 
